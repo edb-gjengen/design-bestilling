@@ -1,0 +1,51 @@
+-- phpMyAdmin SQL Dump
+-- version 3.2.4
+-- http://www.phpmyadmin.net
+--
+-- Host: localhost
+-- Generation Time: Mar 15, 2010 at 07:47 PM
+-- Server version: 5.0.89
+-- PHP Version: 5.2.9
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+
+--
+-- Database: `glium337_dns_kak_stuff`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `bestilling`
+--
+
+CREATE TABLE IF NOT EXISTS `bestilling` (
+  `id` int(11) NOT NULL auto_increment,
+  `posted` timestamp NOT NULL default CURRENT_TIMESTAMP,
+  `frist` date NOT NULL,
+  `hvem` varchar(50) NOT NULL,
+  `kontakt_navn` varchar(50) NOT NULL,
+  `kontakt_email` varchar(50) NOT NULL,
+  `kontakt_nummer` varchar(20) NOT NULL,
+  `format` varchar(20) NOT NULL,
+  `arkstorrelse` varchar(20) NOT NULL,
+  `farge` varchar(20) NOT NULL,
+  `marger` varchar(20) NOT NULL,
+  `innhold` mediumtext NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=20 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `kak_user`
+--
+
+CREATE TABLE IF NOT EXISTS `kak_user` (
+  `id` int(11) NOT NULL auto_increment,
+  `bestilling_id` int(11) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `registerd` timestamp NOT NULL default CURRENT_TIMESTAMP,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=21 ;
+
