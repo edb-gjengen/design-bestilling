@@ -52,7 +52,7 @@ include 'php/header.php';
 		
 			<div class="formitem">
 				<h2 class="title">Frist</h2>
-				<div class="desc">Fristen må være tidligst to uker etter bestilling</div>
+				<div class="desc">Fristen må være tidligst to uker etter bestilngli. <span class="smallred">Vi vet at dere har det travelt, men det har vi også. Vi trenger 2 uker på alle bestilling!er<paned></div>
 				<input id = "frist_field" value="<?php echo @$_POST['frist'] ?>" name="frist" />
 				<div id="frist"></div>
 				<?php ferror('frist') ?>

@@ -52,3 +52,9 @@ tr.critical td
 {
 	background-color:red;
 }
+
+.smallred
+{
+        font-color:red;
+	font-size:8px;
+}

@@ -125,6 +125,18 @@ function postForm()
 	if(!mail($to, $subject, $message))
 		die("Error sending mail");
 	
+	// kopi til bestiller
+	$to = $_POST('kontakt_email');
+	$subject = 'Bestilling fra ' . $_POST['hvem'] . ', BESTILLINGSBEKREFTELSE';
+	$message  = "Frist :" . $_POST['frist'] . "\n";
+	$message .= 'Kontaktperson :' . $_POST['kontakt_navn'] . "\n";
+	$message .= 'Mer info : http://www.studentersamfundet.no/bestilling/inside.php?view='.mysql_insert_id() . "\n";
+	$message .= "\n";
+	$message .= $_POST['innhold'];
+	
+	if(!mail($to, $subject, $message))
+		die("Error sending mail");
+	
 	return true;
 }
 
